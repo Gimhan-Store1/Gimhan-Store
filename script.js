@@ -1,277 +1,116 @@
-/* ======================================
-   GIMHAN STORE - JAVASCRIPT
-====================================== */
+/*==========================
+PRODUCT IMAGE SELECT
+==========================*/
 
-// Search Placeholder Animation
+const images = document.querySelectorAll(".option-images img");
 
-const search = document.getElementById("search");
+images.forEach((img)=>{
 
-const words = [
-"Search Toys...",
-"Search Teddy Bears...",
-"Search Gift Items...",
-"Search Cars...",
-"Search Dolls..."
-];
+img.addEventListener("click",()=>{
 
-let index = 0;
+images.forEach((item)=>{
 
-setInterval(() => {
+item.style.border="2px solid #eee";
 
-search.placeholder = words[index];
+});
 
-index++;
+img.style.border="2px solid #ff6a00";
 
-if(index >= words.length){
+});
 
-index = 0;
+});
+
+
+/*==========================
+TOP MENU ACTIVE
+==========================*/
+
+const menu=document.querySelectorAll(".top-menu a");
+
+menu.forEach((item)=>{
+
+item.addEventListener("click",()=>{
+
+menu.forEach((nav)=>{
+
+nav.classList.remove("active");
+
+});
+
+item.classList.add("active");
+
+});
+
+});
+
+
+/*==========================
+BUY NOW
+==========================*/
+
+document.querySelector(".buy").addEventListener("click",()=>{
+
+alert("Buy Now Clicked");
+
+});
+
+
+/*==========================
+ADD TO CART
+==========================*/
+
+document.querySelector(".cart").addEventListener("click",()=>{
+
+alert("Added To Cart");
+
+});
+
+
+/*==========================
+FOLLOW BUTTON
+==========================*/
+
+const follow=document.querySelector(".store-top button");
+
+follow.addEventListener("click",()=>{
+
+if(follow.innerHTML=="Follow"){
+
+follow.innerHTML="Following";
+
+follow.style.background="#ff6a00";
+
+follow.style.color="#fff";
+
+}else{
+
+follow.innerHTML="Follow";
+
+follow.style.background="#fff";
+
+follow.style.color="#ff6a00";
 
 }
 
-},2000);
-
-
-// Shopping Cart Counter
-
-let cartCount = 0;
-
-const cartNumber = document.getElementById("cart-count");
-
-function addToCart(){
-
-cartCount++;
-
-cartNumber.innerHTML = cartCount;
-
-cartNumber.style.transform="scale(1.4)";
-
-setTimeout(()=>{
-
-cartNumber.style.transform="scale(1)";
-
-},300);
-
-}
-
-
-// Product Hover Animation
-
-const cards = document.querySelectorAll(".product-card");
-
-cards.forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transform="translateY(-8px) scale(1.03)";
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="translateY(0px)";
-
-});
-
 });
 
 
-// Smooth Scroll
+/*==========================
+SMOOTH SCROLL
+==========================*/
 
-document.querySelectorAll("a").forEach(anchor=>{
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
 anchor.addEventListener("click",function(e){
 
-const href=this.getAttribute("href");
-
-if(href.startsWith("#")){
-
 e.preventDefault();
 
-document.querySelector(href).scrollIntoView({
+document.querySelector(this.getAttribute("href")).scrollIntoView({
 
 behavior:"smooth"
 
 });
 
-}
-
 });
 
 });
-
-
-// Loading Animation
-
-window.onload=function(){
-
-document.body.style.opacity="0";
-
-setTimeout(()=>{
-
-document.body.style.transition="1s";
-
-document.body.style.opacity="1";
-
-},200);
-
-};
-
-
-// Button Ripple Effect
-
-document.addEventListener("click",(e)=>{
-
-if(e.target.classList.contains("btn")){
-
-let circle=document.createElement("span");
-
-circle.classList.add("ripple");
-
-e.target.appendChild(circle);
-
-setTimeout(()=>{
-
-circle.remove();
-
-},600);
-
-}
-
-});
-
-
-// Welcome Message
-
-console.log("Welcome To Gimhan Store");
-
-/* ===================================
-   PRODUCT PAGE JAVASCRIPT
-=================================== */
-
-// Quantity
-
-const minusBtn = document.querySelector(".quantity button:first-child");
-const plusBtn = document.querySelector(".quantity button:last-child");
-const qtyInput = document.querySelector(".quantity input");
-
-if (minusBtn && plusBtn && qtyInput) {
-
-minusBtn.onclick = () => {
-
-let qty = parseInt(qtyInput.value);
-
-if(qty > 1){
-
-qtyInput.value = qty - 1;
-
-}
-
-};
-
-plusBtn.onclick = () => {
-
-let qty = parseInt(qtyInput.value);
-
-qtyInput.value = qty + 1;
-
-};
-
-}
-
-
-// Image Zoom
-
-const mainImage = document.getElementById("mainImage");
-
-if(mainImage){
-
-mainImage.addEventListener("click",()=>{
-
-if(mainImage.style.transform=="scale(1.8)"){
-
-mainImage.style.transform="scale(1)";
-
-}
-
-else{
-
-mainImage.style.transform="scale(1.8)";
-
-}
-
-});
-
-}
-
-
-// Buy Button
-
-const buyBtn=document.querySelector(".buy-btn");
-
-if(buyBtn){
-
-buyBtn.onclick=()=>{
-
-alert("Thank You For Shopping ❤️");
-
-};
-
-}
-
-
-// Add To Cart
-
-const cartBtn=document.querySelector(".cart-btn");
-
-if(cartBtn){
-
-cartBtn.onclick=()=>{
-
-addToCart();
-
-alert("Product Added To Cart");
-
-};
-
-}
-
-
-// WhatsApp Button
-
-const whatsapp=document.querySelector(".whatsapp-btn");
-
-if(whatsapp){
-
-whatsapp.href="https://wa.me/94770000000";
-
-}
-
-
-// Comment Button
-
-const commentBtn=document.querySelector(".comment-box button");
-
-if(commentBtn){
-
-commentBtn.onclick=()=>{
-
-let txt=document.querySelector(".comment-box textarea").value;
-
-if(txt==""){
-
-alert("Please Write Your Comment");
-
-}
-
-else{
-
-alert("Thank You For Your Feedback ❤️");
-
-document.querySelector(".comment-box textarea").value="";
-
-}
-
-};
-
-}
-
