@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gimhan Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="top-bar">
+
+<div class="logo">
+
+<img src="assets/logo.png" alt="Logo">
+
+<div class="store-name">
+
+<h2>Gimhan Store</h2>
+
+<p>Gift Items & Toys</p>
+
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input type="text"
+id="search"
+placeholder="Search Products...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="cart">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cart-count">0</span>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="slider">
+
+<div class="slides">
+
+<img src="assets/banner1.jpg">
+
+<img src="assets/banner2.jpg">
+
+<img src="assets/banner1.jpg">
+
+</div>
+
+</section>
+
+<section class="products">
+
+<h2>Latest Products</h2>
+
+<div class="product-grid">
+
+<!-- Product Cards මෙතන එනවා -->
+
+</div>
+
+</section>
+
+<nav class="bottom-nav">
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<span>Search</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="login.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Account</span>
+
+</a>
+
+</nav>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
