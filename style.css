@@ -1,413 +1,7 @@
-/* ======================================
-   GIMHAN STORE - PART 1
-====================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-:root{
-    --green:#1DB954;
-    --lightgreen:#8FD13F;
-    --blue:#1FA2FF;
-    --lightblue:#4FC3F7;
-    --white:#ffffff;
-    --dark:#222;
-    --gray:#666;
-}
-
-body{
-    background:#f5f7fa;
-    overflow-x:hidden;
-    padding-bottom:80px;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:linear-gradient(90deg,var(--green),var(--blue));
-    padding:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.top-bar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-}
-
-/* Logo */
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo img{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#fff;
-    padding:3px;
-    animation:rotateLogo 8s linear infinite;
-}
-
-.store-name h2{
-    color:#fff;
-    font-size:20px;
-}
-
-.store-name p{
-    color:#fff;
-    font-size:12px;
-}
-
-/* Search */
-
-.search-box{
-    flex:1;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    height:42px;
-    border:none;
-    outline:none;
-    border-radius:30px;
-    padding:0 45px 0 18px;
-    font-size:15px;
-}
-
-.search-box i{
-    position:absolute;
-    right:15px;
-    top:12px;
-    color:var(--green);
-}
-
-/* Cart */
-
-.cart{
-    color:#fff;
-    font-size:24px;
-    position:relative;
-    animation:cartJump 1.5s infinite;
-}
-
-#cart-count{
-    position:absolute;
-    top:-7px;
-    right:-10px;
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:red;
-    color:#fff;
-    font-size:11px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-/* ================= SLIDER ================= */
-
-.slider{
-    padding:10px;
-}
-
-.slides{
-    display:flex;
-    width:300%;
-    animation:slide 12s infinite;
-}
-
-.slides img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:15px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products{
-    padding:15px;
-}
-
-.products h2{
-    font-size:22px;
-    margin-bottom:15px;
-    color:#333;
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.product-link{
-    text-decoration:none;
-    color:inherit;
-}
-
-.product-card{
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-}
-
-.product-card img{
-    width:100%;
-    height:170px;
-    object-fit:cover;
-}
-
-.product-info{
-    padding:10px;
-}
-
-.product-info h3{
-    font-size:15px;
-    color:#222;
-    margin-bottom:4px;
-}
-
-.rating{
-    font-size:12px;
-    color:#f5a623;
-    margin-bottom:5px;
-}
-
-.price{
-    font-size:16px;
-    color:var(--green);
-    font-weight:bold;
-}
-
-.old-price{
-    font-size:11px;
-    color:#999;
-    text-decoration:line-through;
-    margin-left:5px;
-}
-
-.discount{
-    display:inline-block;
-    margin-top:5px;
-    background:#ff3b30;
-    color:#fff;
-    font-size:11px;
-    padding:3px 7px;
-    border-radius:5px;
-}
-
-/* ======================================
-   GIMHAN STORE - PART 2
-   Bottom Navigation + Animations
-====================================== */
-
-/* Bottom Navigation */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:65px;
-    background:#fff;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    box-shadow:0 -4px 15px rgba(0,0,0,.12);
-    z-index:999;
-}
-
-.bottom-nav a{
-    text-decoration:none;
-    color:#666;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    font-size:12px;
-    transition:.3s;
-}
-
-.bottom-nav a:hover,
-.bottom-nav a.active{
-    color:#1DB954;
-    transform:scale(1.08);
-}
-
-.bottom-nav i{
-    font-size:22px;
-    margin-bottom:4px;
-}
-
-/* Button Animation */
-
-button{
-    transition:.3s;
-}
-
-button:hover{
-    transform:translateY(-3px);
-}
-
-/* Logo Animation */
-
-@keyframes rotateLogo{
-
-0%{
-transform:rotate(0deg);
-}
-
-100%{
-transform:rotate(360deg);
-}
-
-}
-
-/* Cart Animation */
-
-@keyframes cartJump{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-5px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-/* Banner Slider Animation */
-
-@keyframes slide{
-
-0%,30%{
-transform:translateX(0);
-}
-
-35%,65%{
-transform:translateX(-100%);
-}
-
-70%,95%{
-transform:translateX(-200%);
-}
-
-100%{
-transform:translateX(0);
-}
-
-}
-
-/* Card Hover */
-
-.product-card:hover img{
-    transform:scale(1.05);
-}
-
-.product-card img{
-    transition:.4s;
-}
-
-/* Mobile Responsive */
-
-@media (max-width:768px){
-
-.top-bar{
-    gap:8px;
-}
-
-.logo img{
-    width:48px;
-    height:48px;
-}
-
-.store-name h2{
-    font-size:16px;
-}
-
-.store-name p{
-    font-size:10px;
-}
-
-.search-box input{
-    height:38px;
-    font-size:13px;
-}
-
-.product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.product-card img{
-    height:145px;
-}
-
-.product-info{
-    padding:8px;
-}
-
-.product-info h3{
-    font-size:14px;
-}
-
-.price{
-    font-size:15px;
-}
-
-.old-price{
-    font-size:10px;
-}
-
-.discount{
-    font-size:10px;
-}
-
-.rating{
-    font-size:11px;
-}
-
-.bottom-nav{
-    height:62px;
-}
-
-.bottom-nav i{
-    font-size:20px;
-}
-
-.bottom-nav span{
-    font-size:11px;
-}
-
-}
-/*========================
-RESET
-========================*/
+/* ==========================
+   GIMHAN STORE
+   APP STYLE UI
+========================== */
 
 *{
 margin:0;
@@ -417,402 +11,411 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#f6f6f6;
-padding-bottom:90px;
-color:#222;
+background:#ffffff;
+overflow-x:hidden;
 }
 
-/*========================
-TOP MENU
-========================*/
+/* COLORS */
 
-.top-menu{
-display:flex;
-overflow-x:auto;
-background:#fff;
-height:55px;
-align-items:center;
-padding:0 15px;
-border-bottom:1px solid #e5e5e5;
-position:sticky;
-top:0;
-z-index:999;
+:root{
+
+--green:#1DB954;
+
+--lightgreen:#8FD13F;
+
+--blue:#1FA2FF;
+
+--lightblue:#4FC3F7;
+
+--white:#ffffff;
+
 }
 
-.top-menu a{
-margin-right:30px;
-font-size:18px;
-white-space:nowrap;
-color:#888;
-text-decoration:none;
-cursor:pointer;
-}
+/* HEADER */
 
-.top-menu .active{
-color:#ff6a00;
-font-weight:bold;
-}
+header{
 
-/*========================
-CARD
-========================*/
-
-.card{
-background:#fff;
-margin-top:10px;
-padding:15px;
-}
-
-.title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-font-size:18px;
-margin-bottom:15px;
-}
-
-.title span{
-font-weight:bold;
-}
-
-/*========================
-OPTIONS
-========================*/
-
-.option-images{
-display:flex;
-overflow-x:auto;
-gap:12px;
-}
-
-.option-images img{
-width:85px;
-height:85px;
-border-radius:8px;
-border:2px solid #eee;
-object-fit:cover;
-flex:none;
-cursor:pointer;
-transition:.3s;
-}
-
-.option-images img:hover{
-border:2px solid #ff6a00;
-transform:scale(1.04);
-}
-
-/*========================
-LIST
-========================*/
-
-.list{
-background:#fff;
-margin-top:10px;
-}
-
-.row{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 15px;
-border-bottom:1px solid #ededed;
-}
-
-.row span{
-width:120px;
-font-size:17px;
-color:#777;
-}
-
-.row p{
-flex:1;
-font-size:15px;
-line-height:24px;
-padding-left:10px;
-color:#222;
-}
-
-.row i{
-color:#999;
-font-size:18px;
-}
-
-/*========================
-REVIEW
-========================*/
-
-.review{
-background:#fff;
-margin-top:10px;
-padding:15px;
-}
-
-.review-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:15px;
-}
-
-.review-header h3{
-font-size:22px;
-}
-
-.review-header a{
-color:#ff6a00;
-text-decoration:none;
-font-size:18px;
-}
-
-.review-user{
-font-size:18px;
-margin-bottom:10px;
-}
-
-.stars{
-color:#ffb400;
-font-size:20px;
-margin-bottom:10px;
-}
-
-.review-box p{
-font-size:18px;
-margin-bottom:15px;
-line-height:28px;
-}
-
-.review-images{
-display:flex;
-gap:12px;
-}
-
-.review-images img{
-width:110px;
-height:110px;
-border-radius:8px;
-object-fit:cover;
-}
-
-/*========================
-STORE
-========================*/
-
-.store{
-background:#fff;
-margin-top:10px;
-padding:18px;
-}
-
-.store-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:25px;
-}
-
-.store-top h2{
-font-size:28px;
-font-weight:500;
-}
-
-.store-top button{
-padding:10px 22px;
-border:2px solid #ff6a00;
-background:#fff;
-color:#ff6a00;
-border-radius:8px;
-font-size:18px;
-cursor:pointer;
-}
-
-.store-rate{
-display:flex;
-justify-content:space-between;
-text-align:center;
-margin-bottom:25px;
-}
-
-.store-rate h1{
-font-size:42px;
-font-weight:500;
-}
-
-.store-rate p{
-margin-top:8px;
-font-size:15px;
-color:#777;
-}
-
-.visit{
-display:block;
-text-align:center;
-text-decoration:none;
-font-size:22px;
-color:#ff6a00;
-font-style:italic;
-}
-
-/*========================
-HIGHLIGHTS
-========================*/
-
-.highlights{
-background:#fff;
-margin-top:10px;
-padding:18px;
-}
-
-.highlights h3{
-font-size:24px;
-margin-bottom:15px;
-}
-
-.highlights p{
-font-size:19px;
-line-height:32px;
-color:#333;
-}
-
-/*========================
-DESCRIPTION
-========================*/
-
-.description{
-background:#fff;
-margin-top:10px;
-padding:18px;
-}
-
-.description h3{
-font-size:24px;
-margin-bottom:18px;
-}
-
-.description img{
 width:100%;
-border-radius:10px;
-margin-bottom:15px;
-display:block;
+
+background:linear-gradient(90deg,var(--green),var(--blue));
+
+padding:15px;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
 }
 
-/*========================
-BOTTOM BAR
-========================*/
+.top-bar{
 
-.bottom-bar{
-position:fixed;
-left:0;
-right:0;
-bottom:0;
-height:70px;
 display:flex;
-background:#fff;
-box-shadow:0 -2px 10px rgba(0,0,0,.12);
-z-index:999;
-}
 
-.store-btn{
-width:90px;
-display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-color:#ff4b63;
+
+justify-content:space-between;
+
+gap:10px;
+
+}
+
+/* LOGO */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.logo img{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:white;
+
+padding:3px;
+
+animation:rotateLogo 6s linear infinite;
+
+}
+
+.store-name h2{
+
+color:white;
+
+font-size:20px;
+
+}
+
+.store-name p{
+
+color:white;
+
+font-size:12px;
+
+opacity:.9;
+
+}
+
+/* SEARCH */
+
+.search-box{
+
+flex:1;
+
+position:relative;
+
+margin:0 10px;
+
+}
+
+.search-box input{
+
+width:100%;
+
+height:42px;
+
+border:none;
+
+border-radius:40px;
+
+padding-left:20px;
+
+padding-right:45px;
+
+outline:none;
+
 font-size:15px;
+
 }
 
-.store-btn i{
+.search-box i{
+
+position:absolute;
+
+right:18px;
+
+top:13px;
+
+color:var(--green);
+
+font-size:18px;
+
+}
+
+/* CART */
+
+.cart{
+
+position:relative;
+
 font-size:24px;
-margin-bottom:5px;
-}
 
-.buy{
-flex:1;
-border:none;
-background:#27b8f6;
-color:#fff;
-font-size:22px;
+color:white;
+
 cursor:pointer;
+
+animation:cartJump 1.5s infinite;
+
 }
 
-.cart{
-flex:1;
-border:none;
-background:#ff8a00;
-color:#fff;
+#cart-count{
+
+position:absolute;
+
+top:-8px;
+
+right:-10px;
+
+background:red;
+
+color:white;
+
+width:18px;
+
+height:18px;
+
+font-size:11px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+/* SLIDER */
+
+.slider{
+
+width:100%;
+
+overflow:hidden;
+
+margin-top:10px;
+
+}
+
+.slides{
+
+display:flex;
+
+width:300%;
+
+animation:slide 12s infinite;
+
+}
+
+.slides img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+padding:8px;
+
+}
+
+/* PRODUCTS */
+
+.products{
+
+padding:15px;
+
+}
+
+.products h2{
+
+margin-bottom:15px;
+
 font-size:22px;
+
+color:#333;
+
+}
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+
+.product-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+transition:.4s;
+
 cursor:pointer;
+
 }
 
-.buy:active,
-.cart:active{
-transform:scale(.98);
+.product-card:hover{
+
+transform:translateY(-6px);
+
 }
 
-/*========================
-SCROLLBAR
-========================*/
+.product-card img{
 
-::-webkit-scrollbar{
-height:5px;
-width:5px;
+width:100%;
+
+height:170px;
+
+object-fit:cover;
+
 }
 
-::-webkit-scrollbar-thumb{
-background:#ff6a00;
-border-radius:20px;
+.product-info{
+
+padding:10px;
+
 }
 
-/*========================
-RESPONSIVE
-========================*/
+.product-info h3{
 
-@media(max-width:768px){
-
-.top-menu a{
 font-size:16px;
-margin-right:22px;
+
+margin-bottom:6px;
+
 }
 
-.title{
-font-size:16px;
-}
+.price{
 
-.option-images img{
-width:72px;
-height:72px;
-}
+color:var(--green);
 
-.review-header h3{
 font-size:18px;
+
+font-weight:bold;
+
 }
 
-.review-images img{
-width:85px;
-height:85px;
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+height:65px;
+
+background:white;
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+box-shadow:0 -3px 15px rgba(0,0,0,.15);
+
+z-index:999;
+
 }
 
-.store-top h2{
+.bottom-nav a{
+
+text-decoration:none;
+
+color:#666;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+font-size:13px;
+
+transition:.3s;
+
+}
+
+.bottom-nav a:hover{
+
+color:var(--green);
+
+transform:scale(1.15);
+
+}
+
+.bottom-nav i{
+
 font-size:22px;
-}
 
-.store-rate h1{
-font-size:32px;
-}
-
-.highlights p{
-font-size:16px;
-line-height:28px;
-}
-
-.buy,
-.cart{
-font-size:18px;
-}
+margin-bottom:4px;
 
 }
 
+/* ANIMATIONS */
 
+@keyframes slide{
 
+0%{transform:translateX(0);}
+
+30%{transform:translateX(0);}
+
+35%{transform:translateX(-100%);}
+
+65%{transform:translateX(-100%);}
+
+70%{transform:translateX(-200%);}
+
+100%{transform:translateX(0);}
 
 }
+
+@keyframes rotateLogo{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes cartJump{
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+}
+
+
