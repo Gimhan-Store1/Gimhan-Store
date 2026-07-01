@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Product Details | Gimhan Store</title>
@@ -18,155 +16,131 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<header>
+<header class="product-header">
 
-<div class="top-bar">
+<a href="index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
 
-<div class="logo">
+<h2>Product Details</h2>
 
-<img src="assets/logo.png">
+<div>
 
-<div class="store-name">
+<i class="fa-regular fa-heart"></i>
 
-<h2>Gimhan Store</h2>
-
-<p>Gift Items & Toys</p>
-
-</div>
-
-</div>
+<i class="fa-solid fa-share-nodes"></i>
 
 </div>
 
 </header>
 
-<section class="product-page">
+<section class="product-container">
 
-<div class="product-image">
+<div class="gallery">
 
-<img src="assets/products/product1.jpg" id="mainImage">
+<img src="assets/products/product1.jpg"
+id="mainImage"
+class="main-image">
+
+<div class="thumbs">
+
+<img src="assets/products/product1.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product2.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product3.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product4.jpg"
+onclick="changeImage(this)">
 
 </div>
 
-<div class="product-details">
+</div>
 
-<h2>Teddy Bear Gift</h2>
+<div class="details">
 
-<h3 class="price">Rs. 2,500</h3>
+<h1>Teddy Bear</h1>
 
-<p class="discount">
+<div class="rating">
+
+★★★★★
+<span>(125 Reviews)</span>
+
+</div>
+
+<h2>
+
+Rs.2,500
+
+<span>
+
+Rs.3,100
+
+</span>
+
+</h2>
+
+<div class="offer">
 
 20% OFF
 
+</div>
+
+<p>
+
+Soft Teddy Bear Gift Item.
+
+Best Quality Product.
+
+Perfect for Birthday Gifts.
+
 </p>
 
-<div class="quantity">
+<div class="stock">
 
-<button>-</button>
+<i class="fa-solid fa-box"></i>
 
-<input type="number" value="1">
-
-<button>+</button>
+In Stock
 
 </div>
 
-<div class="buttons">
+<div class="quantity">
 
-<button class="buy-btn">
+<button id="minus">-</button>
 
-Buy Now
+<input value="1" id="qty">
 
-</button>
+<button id="plus">+</button>
+
+</div>
+
+<div class="action-buttons">
 
 <button class="cart-btn">
+
+<i class="fa-solid fa-cart-shopping"></i>
 
 Add To Cart
 
 </button>
 
-</div>
+<a href="https://wa.me/94770000000">
 
-<a href="#"
-class="whatsapp-btn">
+<button class="whatsapp-btn">
 
 <i class="fa-brands fa-whatsapp"></i>
 
-Order via WhatsApp
+Buy on WhatsApp
+
+</button>
 
 </a>
 
 </div>
 
-</section>
-
-<section class="description">
-
-<h2>Product Description</h2>
-
-<p>
-
-High Quality Gift Item.
-
-Perfect for Birthday,
-
-Wedding,
-
-Anniversary,
-
-Valentine,
-
-Children.
-
-</p>
-
-</section>
-
-<section class="reviews">
-
-<h2>Customer Reviews</h2>
-
-⭐⭐⭐⭐☆
-
-<p>
-
-Very Good Product
-
-</p>
-
-</section>
-
-<section class="comment-box">
-
-<h2>Leave a Comment</h2>
-
-<textarea
-
-placeholder="Write your review...">
-
-</textarea>
-
-<button>
-
-Submit
-
-</button>
-
-</section>
-
-<section class="related-products">
-
-<h2>Related Products</h2>
-
-<div class="related-grid">
-
-<!-- Product Cards -->
-
 </div>
 
 </section>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
