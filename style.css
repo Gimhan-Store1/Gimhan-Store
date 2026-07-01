@@ -1,12 +1,13 @@
-/* ======================================
+/* ==========================================
    GIMHAN STORE - PART 1
-====================================== */
+   Header + Slider + Product Cards
+========================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 :root{
@@ -14,9 +15,7 @@
     --lightgreen:#8FD13F;
     --blue:#1FA2FF;
     --lightblue:#4FC3F7;
-    --white:#ffffff;
-    --dark:#222;
-    --gray:#666;
+    --white:#fff;
 }
 
 body{
@@ -31,19 +30,16 @@ header{
     position:sticky;
     top:0;
     z-index:999;
-    background:linear-gradient(90deg,var(--green),var(--blue));
+    background:linear-gradient(90deg,#1DB954,#1FA2FF);
     padding:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 .top-bar{
     display:flex;
     align-items:center;
-    justify-content:space-between;
     gap:10px;
 }
-
-/* Logo */
 
 .logo{
     display:flex;
@@ -84,14 +80,14 @@ header{
     outline:none;
     border-radius:30px;
     padding:0 45px 0 18px;
-    font-size:15px;
+    font-size:14px;
 }
 
 .search-box i{
     position:absolute;
     right:15px;
     top:12px;
-    color:var(--green);
+    color:#1DB954;
 }
 
 /* Cart */
@@ -105,8 +101,8 @@ header{
 
 #cart-count{
     position:absolute;
-    top:-7px;
-    right:-10px;
+    top:-6px;
+    right:-8px;
     width:18px;
     height:18px;
     border-radius:50%;
@@ -145,14 +141,14 @@ header{
 
 .products h2{
     font-size:22px;
-    margin-bottom:15px;
     color:#333;
+    margin-bottom:15px;
 }
 
 .product-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:12px;
 }
 
 .product-link{
@@ -162,9 +158,9 @@ header{
 
 .product-card{
     background:#fff;
-    border-radius:15px;
+    border-radius:16px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -174,8 +170,13 @@ header{
 
 .product-card img{
     width:100%;
-    height:170px;
+    height:160px;
     object-fit:cover;
+    transition:.4s;
+}
+
+.product-card:hover img{
+    transform:scale(1.05);
 }
 
 .product-info{
@@ -183,58 +184,60 @@ header{
 }
 
 .product-info h3{
-    font-size:15px;
+    font-size:14px;
     color:#222;
     margin-bottom:4px;
+    font-weight:600;
 }
 
 .rating{
-    font-size:12px;
-    color:#f5a623;
+    font-size:11px;
+    color:#FFA500;
     margin-bottom:5px;
 }
 
 .price{
-    font-size:16px;
-    color:var(--green);
-    font-weight:bold;
+    font-size:15px;
+    color:#1DB954;
+    font-weight:700;
 }
 
 .old-price{
-    font-size:11px;
+    display:block;
+    font-size:10px;
     color:#999;
     text-decoration:line-through;
-    margin-left:5px;
+    margin-top:2px;
 }
 
 .discount{
     display:inline-block;
     margin-top:5px;
+    padding:3px 7px;
     background:#ff3b30;
     color:#fff;
-    font-size:11px;
-    padding:3px 7px;
     border-radius:5px;
+    font-size:10px;
+    font-weight:600;
 }
-
-/* ======================================
+/* ==========================================
    GIMHAN STORE - PART 2
-   Bottom Navigation + Animations
-====================================== */
+   Bottom Navigation + Animations + Mobile
+========================================== */
 
 /* Bottom Navigation */
 
 .bottom-nav{
     position:fixed;
-    bottom:0;
     left:0;
+    bottom:0;
     width:100%;
     height:65px;
     background:#fff;
     display:flex;
     justify-content:space-around;
     align-items:center;
-    box-shadow:0 -4px 15px rgba(0,0,0,.12);
+    box-shadow:0 -3px 12px rgba(0,0,0,.12);
     z-index:999;
 }
 
@@ -251,7 +254,7 @@ header{
 .bottom-nav a:hover,
 .bottom-nav a.active{
     color:#1DB954;
-    transform:scale(1.08);
+    transform:scale(1.1);
 }
 
 .bottom-nav i{
@@ -259,10 +262,11 @@ header{
     margin-bottom:4px;
 }
 
-/* Button Animation */
+/* Buttons */
 
 button{
     transition:.3s;
+    cursor:pointer;
 }
 
 button:hover{
@@ -274,11 +278,11 @@ button:hover{
 @keyframes rotateLogo{
 
 0%{
-transform:rotate(0deg);
+    transform:rotate(0deg);
 }
 
 100%{
-transform:rotate(360deg);
+    transform:rotate(360deg);
 }
 
 }
@@ -288,49 +292,39 @@ transform:rotate(360deg);
 @keyframes cartJump{
 
 0%{
-transform:translateY(0);
+    transform:translateY(0);
 }
 
 50%{
-transform:translateY(-5px);
+    transform:translateY(-5px);
 }
 
 100%{
-transform:translateY(0);
+    transform:translateY(0);
 }
 
 }
 
-/* Banner Slider Animation */
+/* Slider Animation */
 
 @keyframes slide{
 
 0%,30%{
-transform:translateX(0);
+    transform:translateX(0);
 }
 
 35%,65%{
-transform:translateX(-100%);
+    transform:translateX(-100%);
 }
 
 70%,95%{
-transform:translateX(-200%);
+    transform:translateX(-200%);
 }
 
 100%{
-transform:translateX(0);
+    transform:translateX(0);
 }
 
-}
-
-/* Card Hover */
-
-.product-card:hover img{
-    transform:scale(1.05);
-}
-
-.product-card img{
-    transition:.4s;
 }
 
 /* Mobile Responsive */
@@ -347,7 +341,7 @@ transform:translateX(0);
 }
 
 .store-name h2{
-    font-size:16px;
+    font-size:17px;
 }
 
 .store-name p{
@@ -359,9 +353,21 @@ transform:translateX(0);
     font-size:13px;
 }
 
+.slider{
+    padding:8px;
+}
+
+.slides img{
+    height:180px;
+}
+
 .product-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    gap:10px;
+}
+
+.product-card{
+    border-radius:14px;
 }
 
 .product-card img{
@@ -373,23 +379,24 @@ transform:translateX(0);
 }
 
 .product-info h3{
-    font-size:14px;
-}
-
-.price{
-    font-size:15px;
-}
-
-.old-price{
-    font-size:10px;
-}
-
-.discount{
-    font-size:10px;
+    font-size:13px;
 }
 
 .rating{
-    font-size:11px;
+    font-size:10px;
+}
+
+.price{
+    font-size:14px;
+}
+
+.old-price{
+    font-size:9px;
+}
+
+.discount{
+    font-size:9px;
+    padding:2px 6px;
 }
 
 .bottom-nav{
@@ -401,15 +408,14 @@ transform:translateX(0);
 }
 
 .bottom-nav span{
-    font-size:11px;
+    font-size:10px;
 }
 
 }
-
-/* ======================================
+/* ==========================================
    GIMHAN STORE - PART 3
    Product Details Page
-====================================== */
+========================================== */
 
 .product-header{
     position:sticky;
@@ -424,25 +430,36 @@ transform:translateX(0);
 }
 
 .product-header a{
+    text-decoration:none;
     color:#333;
     font-size:22px;
-    text-decoration:none;
 }
 
-.product-header i{
-    margin-left:15px;
+.header-icons{
+    display:flex;
+    gap:18px;
+}
+
+.header-icons i{
     font-size:22px;
     color:#444;
     cursor:pointer;
+    transition:.3s;
 }
+
+.header-icons i:hover{
+    color:#1DB954;
+}
+
+/* Product Layout */
 
 .product-container{
     max-width:1200px;
     margin:auto;
     padding:20px;
     display:flex;
-    flex-wrap:wrap;
     gap:30px;
+    flex-wrap:wrap;
 }
 
 .gallery{
@@ -452,10 +469,10 @@ transform:translateX(0);
 
 .main-image{
     width:100%;
-    border-radius:20px;
+    border-radius:18px;
     box-shadow:0 8px 20px rgba(0,0,0,.12);
-    transition:.3s;
     cursor:zoom-in;
+    transition:.3s;
 }
 
 .main-image:hover{
@@ -482,6 +499,8 @@ transform:translateX(0);
     border-color:#1DB954;
 }
 
+/* Details */
+
 .details{
     flex:1;
     min-width:320px;
@@ -494,32 +513,32 @@ transform:translateX(0);
 }
 
 .details .rating{
+    font-size:15px;
     color:#FFA500;
-    font-size:16px;
     margin-bottom:10px;
 }
 
 .details h2{
-    color:#1DB954;
     font-size:30px;
-    margin-bottom:8px;
+    color:#1DB954;
+    margin-bottom:10px;
 }
 
 .details h2 span{
+    font-size:17px;
     color:#999;
     text-decoration:line-through;
-    font-size:18px;
     margin-left:10px;
 }
 
 .offer{
     display:inline-block;
-    background:#ff3b30;
-    color:#fff;
     padding:6px 14px;
     border-radius:20px;
+    background:#ff3b30;
+    color:#fff;
     font-size:13px;
-    margin:10px 0;
+    margin-bottom:15px;
 }
 
 .stock{
@@ -527,6 +546,8 @@ transform:translateX(0);
     color:#1DB954;
     font-weight:bold;
 }
+
+/* Quantity */
 
 .quantity{
     display:flex;
@@ -543,7 +564,6 @@ transform:translateX(0);
     background:#1FA2FF;
     color:#fff;
     font-size:20px;
-    cursor:pointer;
 }
 
 .quantity input{
@@ -554,22 +574,23 @@ transform:translateX(0);
     border-radius:8px;
 }
 
+/* Buttons */
+
 .action-buttons{
     display:flex;
-    flex-wrap:wrap;
     gap:15px;
+    flex-wrap:wrap;
     margin-top:20px;
 }
 
 .cart-btn,
 .whatsapp-btn{
-    padding:14px 24px;
+    padding:14px 22px;
     border:none;
     border-radius:30px;
     color:#fff;
-    font-size:16px;
-    cursor:pointer;
     text-decoration:none;
+    font-size:16px;
 }
 
 .cart-btn{
@@ -583,13 +604,16 @@ transform:translateX(0);
 .cart-btn:hover,
 .whatsapp-btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
+
+/* Mobile */
 
 @media(max-width:768px){
 
 .product-container{
     flex-direction:column;
+    padding:15px;
 }
 
 .details h1{
@@ -597,7 +621,7 @@ transform:translateX(0);
 }
 
 .details h2{
-    font-size:26px;
+    font-size:25px;
 }
 
 .action-buttons{
@@ -611,20 +635,19 @@ transform:translateX(0);
 }
 
 }
-
-/* ======================================
+/* ==========================================
    GIMHAN STORE - PART 4
-   Reviews + Related Products + Footer
-====================================== */
+   Description • Reviews • Related Products
+========================================== */
 
 /* Description */
 
 .description{
-    padding:20px;
     background:#fff;
     margin:20px;
+    padding:20px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .description h2{
@@ -633,12 +656,12 @@ transform:translateX(0);
 }
 
 .description p{
-    color:#555;
+    color:#666;
     line-height:1.8;
     font-size:15px;
 }
 
-/* Customer Reviews */
+/* Reviews */
 
 .reviews{
     padding:20px;
@@ -656,7 +679,7 @@ transform:translateX(0);
     padding:15px;
     border-radius:15px;
     margin-bottom:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .review-card img{
@@ -667,32 +690,38 @@ transform:translateX(0);
 }
 
 .review-card h4{
-    margin-bottom:5px;
     color:#222;
+    margin-bottom:5px;
+}
+
+.review-card span{
+    color:#FFA500;
+    font-size:13px;
 }
 
 .review-card p{
     color:#666;
     font-size:14px;
+    margin-top:5px;
 }
 
 /* Delivery */
 
 .delivery{
-    padding:20px;
     margin:20px;
     background:#fff;
+    padding:20px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .delivery h2{
     color:#1FA2FF;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .delivery p{
-    margin:10px 0;
+    margin:8px 0;
     color:#555;
 }
 
@@ -714,12 +743,12 @@ transform:translateX(0);
 }
 
 .related-card{
-    text-decoration:none;
     background:#fff;
     border-radius:15px;
     overflow:hidden;
-    color:#333;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -729,13 +758,13 @@ transform:translateX(0);
 
 .related-card img{
     width:100%;
-    height:150px;
+    height:140px;
     object-fit:cover;
 }
 
 .related-card h4{
     padding:10px 10px 5px;
-    font-size:15px;
+    font-size:14px;
 }
 
 .related-card p{
@@ -766,14 +795,18 @@ transform:translateX(0);
     font-size:15px;
 }
 
+.comment-box textarea:focus{
+    border-color:#1DB954;
+}
+
 .comment-box button{
     margin-top:15px;
-    padding:12px 22px;
+    padding:12px 24px;
     border:none;
     border-radius:25px;
     background:#1DB954;
     color:#fff;
-    cursor:pointer;
+    font-size:15px;
     transition:.3s;
 }
 
@@ -785,10 +818,10 @@ transform:translateX(0);
 
 footer{
     margin-top:30px;
-    padding:25px;
     background:linear-gradient(90deg,#1DB954,#1FA2FF);
-    text-align:center;
     color:#fff;
+    text-align:center;
+    padding:25px;
 }
 
 footer h3{
@@ -797,7 +830,7 @@ footer h3{
 
 footer p{
     font-size:14px;
-    opacity:.95;
+    opacity:.9;
 }
 
 /* Mobile */
@@ -805,11 +838,17 @@ footer p{
 @media(max-width:768px){
 
 .review-card{
-    flex-direction:row;
+    flex-direction:column;
+    text-align:center;
+}
+
+.review-card img{
+    margin:auto;
 }
 
 .related-grid{
     grid-template-columns:repeat(2,1fr);
+    gap:10px;
 }
 
 .related-card img{
@@ -821,128 +860,8 @@ footer p{
     margin:10px;
 }
 
-}
-/* ===========================
-   PRODUCT GRID
-=========================== */
-
-.products{
-    padding:15px;
-}
-
-.products h2{
-    font-size:22px;
-    color:#333;
-    margin-bottom:15px;
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.product-link{
-    text-decoration:none;
-    color:inherit;
-}
-
-.product-card{
-    background:#fff;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transition:0.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-}
-
-.product-card img{
-    width:100%;
-    height:170px;
-    object-fit:cover;
-    display:block;
-}
-
-.product-info{
-    padding:10px;
-}
-
-.product-info h3{
-    font-size:14px;
-    color:#222;
-    font-weight:600;
-    margin-bottom:4px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-
-.rating{
-    font-size:11px;
-    color:#FFA500;
-    margin-bottom:5px;
-}
-
-.price{
-    color:#1DB954;
-    font-size:17px;
-    font-weight:700;
-}
-
-.old-price{
-    display:block;
-    font-size:11px;
-    color:#999;
-    text-decoration:line-through;
-    margin-top:2px;
-}
-
-.discount{
-    display:inline-block;
-    margin-top:6px;
-    padding:3px 8px;
-    background:#ff3b30;
-    color:#fff;
-    border-radius:5px;
-    font-size:10px;
-    font-weight:600;
-}
-
-/* Mobile */
-
-@media (max-width:768px){
-
-.product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.product-card img{
-    height:155px;
-}
-
-.product-info{
-    padding:8px;
-}
-
-.product-info h3{
-    font-size:13px;
-}
-
-.price{
-    font-size:15px;
-}
-
-.old-price{
-    font-size:10px;
-}
-
-.discount{
-    font-size:9px;
-    padding:2px 6px;
+footer{
+    padding-bottom:90px;
 }
 
 }
