@@ -18,23 +18,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<header>
+<header class="product-header">
 
-<div class="top-bar">
+<a href="index.html">
 
-<div class="logo">
+<i class="fa-solid fa-arrow-left"></i>
 
-<img src="assets/logo.png">
+</a>
 
-<div class="store-name">
+<div class="header-icons">
 
-<h2>Gimhan Store</h2>
+<i class="fa-regular fa-heart"></i>
 
-<p>Gift Items & Toys</p>
+<i class="fa-solid fa-share-nodes"></i>
 
-</div>
-
-</div>
+<i class="fa-solid fa-cart-shopping"></i>
 
 </div>
 
@@ -44,35 +42,128 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <div class="product-image">
 
-<img src="assets/products/product1.jpg" id="mainImage">
+<img src="assets/products/product1.jpg"
+id="mainImage">
 
 </div>
 
 <div class="product-details">
 
-<h2>Teddy Bear Gift</h2>
+<h2>Premium Teddy Bear</h2>
 
-<h3 class="price">Rs. 2,500</h3>
+<div class="rating">
+
+★★★★★
+
+<span>(254 Reviews)</span>
+
+</div>
+
+<h3 class="price">
+
+Rs. 2,500
+
+<span class="old-price">
+
+Rs. 3,200
+
+</span>
+
+</h3>
 
 <p class="discount">
 
-20% OFF
+22% OFF
 
 </p>
 
-<div class="quantity">
+  <!-- PRODUCT OPTIONS -->
 
-<button>-</button>
+<div class="product-options">
 
-<input type="number" value="1">
+<h3>Color</h3>
 
-<button>+</button>
+<div class="option-list">
+
+<button class="option active">Brown</button>
+
+<button class="option">White</button>
+
+<button class="option">Pink</button>
 
 </div>
+
+<h3>Size</h3>
+
+<div class="option-list">
+
+<button class="option active">Medium</button>
+
+<button class="option">Large</button>
+
+</div>
+
+</div>
+
+<!-- STOCK -->
+
+<div class="stock">
+
+<i class="fa-solid fa-circle-check"></i>
+
+In Stock
+
+</div>
+
+<!-- DELIVERY -->
+
+<div class="delivery-box">
+
+<p>
+
+<i class="fa-solid fa-truck-fast"></i>
+
+Islandwide Delivery Available
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-shield-heart"></i>
+
+100% Original Product
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+Cash On Delivery Available
+
+</p>
+
+</div>
+
+<!-- QUANTITY -->
+
+<div class="quantity">
+
+<button id="minus">-</button>
+
+<input type="number" id="qty" value="1" min="1">
+
+<button id="plus">+</button>
+
+</div>
+
+<!-- ACTION BUTTONS -->
 
 <div class="buttons">
 
 <button class="buy-btn">
+
+<i class="fa-solid fa-bag-shopping"></i>
 
 Buy Now
 
@@ -80,14 +171,17 @@ Buy Now
 
 <button class="cart-btn">
 
+<i class="fa-solid fa-cart-shopping"></i>
+
 Add To Cart
 
 </button>
 
 </div>
 
-<a href="#"
-class="whatsapp-btn">
+<a href="https://wa.me/94770000000?text=Hello%20I%20want%20to%20order%20this%20product"
+class="whatsapp-btn"
+target="_blank">
 
 <i class="fa-brands fa-whatsapp"></i>
 
@@ -99,74 +193,199 @@ Order via WhatsApp
 
 </section>
 
+  <!-- PRODUCT DESCRIPTION -->
+
 <section class="description">
 
 <h2>Product Description</h2>
 
 <p>
 
-High Quality Gift Item.
-
-Perfect for Birthday,
-
-Wedding,
-
-Anniversary,
-
-Valentine,
-
-Children.
+Premium Teddy Bear Gift made with high-quality soft fabric.
+Perfect for Birthdays, Weddings, Anniversaries, Valentine's Day,
+Children and Special Gifts.
 
 </p>
 
+<ul>
+
+<li>✔ Premium Soft Material</li>
+
+<li>✔ High Quality Finish</li>
+
+<li>✔ Perfect Gift Item</li>
+
+<li>✔ Islandwide Delivery</li>
+
+<li>✔ Cash On Delivery Available</li>
+
+</ul>
+
 </section>
+
+<!-- CUSTOMER REVIEWS -->
 
 <section class="reviews">
 
 <h2>Customer Reviews</h2>
 
-⭐⭐⭐⭐☆
+<div class="review-item">
 
-<p>
+<img src="assets/user1.jpg" alt="Customer">
 
-Very Good Product
+<div class="review-content">
 
-</p>
+<h4>Kasun Perera</h4>
+
+<span>★★★★★</span>
+
+<p>Excellent quality. Fast delivery. Highly recommended.</p>
+
+</div>
+
+</div>
+
+<div class="review-item">
+
+<img src="assets/user2.jpg" alt="Customer">
+
+<div class="review-content">
+
+<h4>Nadeesha Silva</h4>
+
+<span>★★★★★</span>
+
+<p>Very beautiful product. Worth every rupee.</p>
+
+</div>
+
+</div>
+
+<div class="review-item">
+
+<img src="assets/user3.jpg" alt="Customer">
+
+<div class="review-content">
+
+<h4>Gayan</h4>
+
+<span>★★★★☆</span>
+
+<p>Good quality and nice packaging.</p>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- DELIVERY INFORMATION -->
+
+<section class="delivery">
+
+<h2>Delivery Information</h2>
+
+<p>🚚 Islandwide Delivery</p>
+
+<p>📦 Delivery within 2–5 Working Days</p>
+
+<p>💵 Cash On Delivery Available</p>
+
+<p>🔒 100% Secure Shopping</p>
+
+</section>
+
+<!-- COMMENT BOX -->
 
 <section class="comment-box">
 
-<h2>Leave a Comment</h2>
+<h2>Write a Review</h2>
 
-<textarea
+<textarea placeholder="Write your review here..."></textarea>
 
-placeholder="Write your review...">
-
-</textarea>
-
-<button>
-
-Submit
-
-</button>
+<button>Submit Review</button>
 
 </section>
 
-<section class="related-products">
+<!-- RELATED PRODUCTS -->
+
+<section class="related">
 
 <h2>Related Products</h2>
 
 <div class="related-grid">
 
-<!-- Product Cards -->
+<a href="product.html" class="related-card">
+
+<img src="assets/products/product2.jpg" alt="Gift Box">
+
+<h4>Gift Box</h4>
+
+<p>Rs. 3,200</p>
+
+</a>
+
+<a href="product.html" class="related-card">
+
+<img src="assets/products/product3.jpg" alt="Toy Car">
+
+<h4>Toy Car</h4>
+
+<p>Rs. 1,950</p>
+
+</a>
+
+<a href="product.html" class="related-card">
+
+<img src="assets/products/product4.jpg" alt="Baby Doll">
+
+<h4>Baby Doll</h4>
+
+<p>Rs. 2,850</p>
+
+</a>
+
+<a href="product.html" class="related-card">
+
+<img src="assets/products/product5.jpg" alt="Flower Gift">
+
+<h4>Flower Gift</h4>
+
+<p>Rs. 1,750</p>
+
+</a>
 
 </div>
 
 </section>
+
+<!-- STICKY BOTTOM BAR -->
+
+<div class="sticky-bar">
+
+<a href="#" class="sticky-cart">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+&nbsp; Add to Cart
+
+</a>
+
+<a href="https://wa.me/94770000000?text=Hello%20I%20want%20to%20order%20this%20product"
+class="sticky-buy"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+&nbsp; Buy Now
+
+</a>
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
 
 </html>
+
