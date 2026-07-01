@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gimhan Store</title>
+<title>Product Details | Gimhan Store</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,241 +16,133 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<header>
+<header class="product-header">
 
-<div class="top-bar">
+<a href="index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
 
-<div class="logo">
+<h2>Product Details</h2>
 
-<img src="assets/logo.png" alt="Logo">
+<div>
 
-<div class="store-name">
+<i class="fa-regular fa-heart"></i>
 
-<h2>Gimhan Store</h2>
-
-<p>Gift Items & Toys</p>
-
-</div>
-
-</div>
-
-<div class="search-box">
-
-<input type="text"
-id="search"
-placeholder="Search Products...">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-</div>
-
-<div class="cart">
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-<span id="cart-count">0</span>
-
-</div>
+<i class="fa-solid fa-share-nodes"></i>
 
 </div>
 
 </header>
 
-<section class="slider">
+<section class="product-container">
 
-<div class="slides">
+<div class="gallery">
 
-<img src="assets/banner1.jpg">
+<img src="assets/products/product1.jpg"
+id="mainImage"
+class="main-image">
 
-<img src="assets/banner2.jpg">
+<div class="thumbs">
 
-<img src="assets/banner1.jpg">
+<img src="assets/products/product1.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product2.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product3.jpg"
+onclick="changeImage(this)">
+
+<img src="assets/products/product4.jpg"
+onclick="changeImage(this)">
 
 </div>
 
-</section>
+</div>
 
-  <section class="products">
+<div class="details">
 
-<h2>Latest Products</h2>
-
-<div class="product-grid">
-
-
-<a href="product.html" class="product-link">
-
-<div class="product-card">
-
-<img src="assets/products/product1.jpg" alt="Teddy Bear">
-
-<div class="product-info">
-
-<h3>Teddy Bear</h3>
+<h1>Teddy Bear</h1>
 
 <div class="rating">
-★★★★★ <span>(125)</span>
+
+★★★★★
+<span>(125 Reviews)</span>
+
 </div>
 
-<p class="price">
+<h2>
+
 Rs.2,500
-<span class="old-price">Rs.3,100</span>
+
+<span>
+
+Rs.3,100
+
+</span>
+
+</h2>
+
+<div class="offer">
+
+20% OFF
+
+</div>
+
+<p>
+
+Soft Teddy Bear Gift Item.
+
+Best Quality Product.
+
+Perfect for Birthday Gifts.
+
 </p>
 
-<p class="discount">20% OFF</p>
+<div class="stock">
+
+<i class="fa-solid fa-box"></i>
+
+In Stock
 
 </div>
 
+<div class="quantity">
+
+<button id="minus">-</button>
+
+<input value="1" id="qty">
+
+<button id="plus">+</button>
+
 </div>
 
-</a>
-  
-<div class="product-card">
+<div class="action-buttons">
 
-<img src="assets/products/product3.jpg">
+<button class="cart-btn">
 
-<div class="product-info">
+<i class="fa-solid fa-cart-shopping"></i>
 
-<h3>Toy Car</h3>
-
-<p class="price">Rs.1,950</p>
-
-<p class="discount">10% OFF</p>
-
-<a href="product.html">
-
-<button class="buy-btn">
-
-View Product
+Add To Cart
 
 </button>
 
-</a>
+<a href="https://wa.me/94770000000">
 
-</div>
-
-</div>
-
-<div class="product-card">
-
-<img src="assets/products/product4.jpg">
-
-<div class="product-info">
-
-<h3>Baby Doll</h3>
-
-<p class="price">Rs.2,850</p>
-
-<p class="discount">25% OFF</p>
-
-<a href="product.html">
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="product-card">
-
-<img src="assets/products/product5.jpg">
-
-<div class="product-info">
-
-<h3>Flower Gift</h3>
-
-<p class="price">Rs.1,750</p>
-
-<p class="discount">12% OFF</p>
-
-<a href="product.html">
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="product-card">
-
-<img src="assets/products/product6.jpg">
-
-<div class="product-info">
-
-<h3>Soft Toy</h3>
-
-<p class="price">Rs.2,950</p>
-
-<p class="discount">30% OFF</p>
-
-<a href="product.html">
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<nav class="bottom-nav">
-
-<a href="index.html">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Home</span>
-
-</a>
-
-<a href="#">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-<span>Search</span>
-
-</a>
-
-<a href="#">
+<button class="whatsapp-btn">
 
 <i class="fa-brands fa-whatsapp"></i>
 
-<span>Chat</span>
+Buy on WhatsApp
+
+</button>
 
 </a>
 
-<a href="login.html">
+</div>
 
-<i class="fa-solid fa-user"></i>
+</div>
 
-<span>Account</span>
+</section>
 
-</a>
-
-</nav>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
-
+  
